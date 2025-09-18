@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inicio | CRUD Usuarios</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header role="banner">
+    <div class="header-inner">
+      <div class="brand" aria-label="Título del sitio">CRUD de Usuarios</div>
+      <nav role="navigation" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html" aria-label="Ir al inicio">Inicio</a></li>
+          <li><a href="listar.php" aria-label="Listar usuarios">Listar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main role="main">
+    <section class="container" aria-label="Sección principal">
+      <article class="card" aria-label="Registro de usuario">
+        <h2>Registrar usuario</h2>
+        <p class="muted">Completa el formulario para crear un nuevo usuario.</p>
+        <form action="registro.php" method="POST" aria-label="Formulario de registro">
+          <div style="display:flex; gap:10px; align-items: center; flex-wrap: wrap;">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" required aria-label="Nombre del usuario">
+            <button type="submit" class="btn btn-primary" aria-label="Enviar registro">Registrar</button>
+          </div>
+        </form>
+      </article>
+
+      <aside class="card" aria-label="Acciones rápidas">
+        <h2>Acciones</h2>
+        <p class="muted">Accede a otras funciones del CRUD.</p>
+        <div class="actions" role="group" aria-label="Grupo de acciones">
+          <a class="btn btn-secondary" href="listar.php" aria-label="Ver lista de usuarios">Ver lista</a>
+        </div>
+        <p class="muted" style="margin-top:12px">Base de datos: <code>web2</code>, tabla: <code>usuarios(id INT AUTO_INCREMENT PRIMARY KEY, nombre VARCHAR(255))</code>.</p>
+      </aside>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <span aria-label="Información de derechos">© <span id="year"></span> CRUD Usuarios</span>
+      <span class="muted">Hecho con HTML + CSS (flex, media queries) y PHP en el backend.</span>
+    </div>
+  </footer>
+  <script>
+    (function(){
+      var yearSpan = document.getElementById('year');
+      if (yearSpan) { yearSpan.textContent = new Date().getFullYear(); }
+    })();
+  </script>
+</body>
+</html>
+
+
